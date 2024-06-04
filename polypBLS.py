@@ -1,5 +1,5 @@
 """
-Created on Tue May  3 18:55:01 2022
+Created on Tue May  3 18:55:01 2023
 
 @author: kaushiki and debapriyo
 """
@@ -91,9 +91,9 @@ def polypBLS(x_train, train_y, x_val, val_y, x_test, test_y):
   
 
     
-    InputOfOutputLayer = np.hstack([OutC1_N, OutC3_N])  #
+    InputOfOutputLayer = np.hstack([OutC1_N, OutC3_N])  
     pinvOfInput = pinv(InputOfOutputLayer, fusion_c)
-    OutputWeight = np.dot(pinvOfInput, train_y)  # 全局违逆
+    OutputWeight = np.dot(pinvOfInput, train_y)  
     time_end = time.time()
     trainTime = time_end - time_start
 
@@ -165,7 +165,7 @@ def polypBLS(x_train, train_y, x_val, val_y, x_test, test_y):
    
 
     
-    InputOfOutputLayerTest = np.hstack([OutC1Test_N, OutC3Test_N])  #
+    InputOfOutputLayerTest = np.hstack([OutC1Test_N, OutC3Test_N])  
     
     OutputOfTest = np.dot(InputOfOutputLayerTest, OutputWeight)
     
@@ -237,11 +237,7 @@ def polypBLS(x_train, train_y, x_val, val_y, x_test, test_y):
     print('Testing accurate is', testAcc * 100, '%')
     print('Testing time is ', testTime, 's')
     return trainAcc,valAcc,testAcc
-
-
-
-    
-    
+   
     
     
     
