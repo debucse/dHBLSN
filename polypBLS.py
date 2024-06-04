@@ -1,5 +1,5 @@
 """
-Created on Tue May  3 18:55:01 2022
+Created on Tue May  3 18:55:01 2023
 
 @author: kaushiki and debapriyo
 """
@@ -385,7 +385,7 @@ def polyp_AddEnhanceNodes(x_train, train_y, x_val, val_y, x_test, test_y,s,c,N1,
             B = pinv(C,conv_c)
 
 
-        B=B+0.1*B_prev
+        B=B+0.5*B_prev
        
         pinvOfInput = np.vstack([(pinvOfInput - (D.dot(B))),B])
         
@@ -526,7 +526,7 @@ def polyp_AddEnhanceNodes(x_train, train_y, x_val, val_y, x_test, test_y,s,c,N1,
             B = pinv(C,dtcwt_c)
 
 
-        B=B+0.1*B_prev
+        B=B+0.5*B_prev
        
         pinvOfInput = np.vstack([(pinvOfInput - (D.dot(B))),B])
         
